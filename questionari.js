@@ -680,13 +680,9 @@ API.addQuestionsSet('Distress',{
         name: 'occupazione',
         stem: '<b>Indica la tua occupazione</b>',
         answers: [
-		'Studentessa/Studente',
-		'Inoccupata/o',
-		'Lavoratrice/ore Part-time',
-		'Lavoratrice/ore Full-time',
-		'Studentessa/Studente e Lavoratrice/ore Part-time',
-		'Studentessa/Studente e Lavoratrice/ore Full-time',
-		'Altro'
+		{text:'Studentessa/Studente',value:1},
+		{text:'Studentessa/Studente e Lavoratrice/ore Part-time',value:5},
+		{text:'Studentessa/Studente e Lavoratrice/ore Full-time',value:6}
         ]
     });	
 		
