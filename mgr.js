@@ -28,21 +28,26 @@ define(['managerAPI',
 		title: 'Consenso Informato', 
 		buttonText: 'Invia' }],	    
 
-
         criterio1: [{
 		type: 'quest', 
 		name: 'criterio1', 
 		scriptUrl: 'criterio1.js', 
 		buttonText: 'Invia' }],	    
 
-		
+        criterio2: [{
+		type: 'quest', 
+		name: 'criterio2', 
+		scriptUrl: 'criterio2.js', 
+		buttonText: 'Invia' }],	    
+
+	
         biat_instructions: [{
-            inherit: 'instructions',
-            name: 'biat_instructions',
-            templateUrl: 'biat_instructions.jst',
-            title: 'Istruzioni',
-            buttonText: 'Continua',
-            piTemplate: true
+        inherit: 'instructions',
+        name: 'biat_instructions',
+        templateUrl: 'biat_instructions.jst',
+        title: 'Istruzioni',
+        buttonText: 'Continua',
+        piTemplate: true
         }],
 	    
         practice_instructions: [{
@@ -121,6 +126,24 @@ define(['managerAPI',
             ],
             data: [
                     {
+                        inherit: 'criterio2'
+                    }
+            ],
+            elseData: [// if participants does not agree to participate, they are redirected.
+                {
+                    inherit: 'redirect'
+                }
+            ]
+ 	    },
+	
+		{inherit: 'criterio2'},
+        {
+            mixer: 'branch',// if participants choose "I decline", they are taken to a transition page telling them they are being redirected
+            conditions: [
+                function(){ return piGlobal.criterio2.questions.usercriterio2.response === true;} // if the question name or response options were changed in consent.js, adapt this too 
+            ],
+            data: [
+                    {
                         inherit: 'practice_instructions'
                     }
             ],
@@ -130,6 +153,7 @@ define(['managerAPI',
                 }
             ]
     },
+
     {
         inherit: 'practice'
     },
