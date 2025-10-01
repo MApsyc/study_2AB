@@ -742,7 +742,113 @@ API.addPagesSet('basicPage',
 	        wrapper: true, 
 	        data : [
 	            {
-		    	       inherit:'basicPage', 
+	                inherit:'basicPage', 
+	                questions: {inherit:'vittima'}
+	            },
+	            {
+	                inherit:'basicPage', 
+	                questions: {inherit:'autore'}							
+	            }
+	        ]
+	    },
+	    {
+	        mixer : 'random', 
+	        wrapper: true, 
+	        data : [
+	            {
+	                inherit:'basicPage', 
+	                questions: {inherit:'DiscriminazioneGruppo'}
+	            },
+	            {
+	                inherit:'basicPage', 
+	                questions: {inherit:'DiscriminazioneIndividuale'}							
+	            }
+	        ]
+	    },
+	    {
+		mixer : 'random', 
+	        wrapper: true, 
+	        data : [
+		    {
+	        	inherit:'basicPage', 
+	        	questions: {inherit:'BPNSFS'}
+	            },
+	    	    {
+	        	inherit:'basicPage', 
+	        	questions: {inherit:'SoddAcc'}
+	   	    },	
+	   	    {
+	    		inherit:'basicPage', 
+	   		questions: {inherit:'AspirCar'}
+		    },
+		    {
+	  		inherit:'basicPage', 
+	      		questions: {inherit:'AspettCarr'}
+		    },	
+		    {
+	 	        inherit:'basicPage', 
+	        	questions: {inherit:'Resilienza'}
+	  	    },	
+		    {
+			inherit : 'basicPage2'
+		    },
+	   	    {
+	   		inherit:'basicPage', 
+	 		questions: {inherit:'Distress'}
+	 	    }
+
+		]
+	    },
+	  	    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'nazione'}							
+	            },
+	    	    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'sesso'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'genere'}							
+	            },
+	    	    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'eta'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'regione'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'istruzione'}							
+	            },
+		    {
+			inherit :'basicPage',
+			questions:[
+				{inherit:'areadisciplinare'},
+				{
+					remix: true, 
+					mixer:'branch',
+		            conditions: [
+						{compare: 7, to: 'current.questions.areadisciplinare.response'}
+					],
+					data: [
+						{inherit:'open'}
+					]
+				}
+			]
+		    },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'corsodistudio'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'annodistudio'}							
+	            },
+		    {
+		       inherit:'basicPage', 
 	               questions: {inherit:'occupazione'}							
 	            }
 		
