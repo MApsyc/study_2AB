@@ -78,6 +78,14 @@ define(['managerAPI',
             title: 'Questionario',
             header: 'Questionario'
         }],
+
+	        prova_occupazione: [{
+            type: 'quest',
+            name: 'prova_occupazione',
+            scriptUrl: 'prova_occupazione.js',
+            title: 'Questionario',
+            header: 'Questionario'
+        }],
 	    
         debriefing: [{
             type: 'quest',
@@ -152,7 +160,7 @@ define(['managerAPI',
             ],
             data: [
                     {
-                        inherit: 'practice_instructions'
+                        inherit: 'prova_occupazione'
                     }
             ],
             elseData: [// if participants does not agree to participate, they are redirected.
