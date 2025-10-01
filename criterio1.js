@@ -8,7 +8,7 @@ define(['questAPI'], function(Quest){
   API.addPagesSet('basicPage',{
 		noSubmit:true, //Change to true if you don't want to show the submit button.
 		v1style: 2,
-		header: '',
+		header: ' ',
 		decline: false,
 		autoFocus:true
 	});
@@ -28,14 +28,15 @@ define(['questAPI'], function(Quest){
       questions : [{
         type: 'info',
         stem: 
-        'Sei attualmente una studentessa o uno studente iscritta/o ad un corso di formazione universitaria (ad esempio: corso di laurea triennale, corso di laurea magistrale, corso di dottorato, scuola di specializzazione, master)?' +
+        '<p>Sei attualmente una studentessa o uno studente iscritta/o ad un corso di formazione universitaria (ad esempio: corso di laurea triennale, corso di laurea magistrale, corso di dottorato, scuola di specializzazione, master)?</p>'
+			
     },
         
 
     // Note: Feel free to adapt language based on your consent form.
     {
         inherit : 'basicSelect',
-        name: 'userconsent',
+        name: 'usercriterio1',
         description: '<b>Clicca due volte sul tasto per selezionare la tua risposta<p>',
         answers: [
             {text: 'Sì', value: true},
