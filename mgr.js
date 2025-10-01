@@ -92,6 +92,14 @@ define(['managerAPI',
 	    name:'redirect', 
 	    url: 'https://www.google.com' 
         }],
+
+          
+        redirect2: [{ 
+	    type:'quest',
+	    name:'redirect2', 
+	    scriptUrl: 'redirect2.js' 
+        }],
+
 		
 		//This task waits until the data are sent to the server.
         uploading: uploading_task({header: 'Solo un momento...', body:'Si prega di attendere il salvataggio dei dati.'})
@@ -131,7 +139,7 @@ define(['managerAPI',
             ],
             elseData: [// if participants does not agree to participate, they are redirected.
                 {
-                    inherit: 'redirect'
+                    inherit: 'redirect2'
                 }
             ]
  	    },
@@ -149,7 +157,7 @@ define(['managerAPI',
             ],
             elseData: [// if participants does not agree to participate, they are redirected.
                 {
-                    inherit: 'redirect'
+                    inherit: 'redirect2'
                 }
             ]
     },
