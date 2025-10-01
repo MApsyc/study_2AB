@@ -79,7 +79,7 @@ define(['managerAPI',
             header: 'Questionario'
         }],
 
-	        prova_occupazione: [{
+	    prova_occupazione: [{
             type: 'quest',
             name: 'prova_occupazione',
             scriptUrl: 'prova_occupazione.js',
